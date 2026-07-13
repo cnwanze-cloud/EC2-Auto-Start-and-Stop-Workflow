@@ -2,7 +2,7 @@ import boto3
 
 def lambda_handler(event, context):
     sns = boto3.client('sns')
-    topic_arn = "arn:aws:sns:us-east-1:021655151277:MyTopic" 
+    topic_arn = "arn:aws:sns:us-east-1:xxxxxxxxx:MyTopic" 
     
     message = f"Success! The EC2 Instance {event.get('InstanceId')} has started and passed the health check."
     
