@@ -84,10 +84,6 @@ ec2-auto-start-health-check/
 │   └── send-success-email/
 │       └── lambda_function.py
 │
-├── step-functions/
-│   ├── workflow.json
-│   └── execution-input.json
-│
 ├── iam/
 │   ├── step-functions-policy.json
 │   ├── lambda-health-policy.json
