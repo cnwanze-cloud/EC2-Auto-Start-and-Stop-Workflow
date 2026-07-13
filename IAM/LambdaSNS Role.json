@@ -1,0 +1,33 @@
+LambdaSNS Role
+
+1. AWSLambdaBasicExecutionRole
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+
+2. SNS-Policy
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublishSNS",
+            "Effect": "Allow",
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:us-east-1:021655151277:MyTopic"
+        }
+    ]
+}

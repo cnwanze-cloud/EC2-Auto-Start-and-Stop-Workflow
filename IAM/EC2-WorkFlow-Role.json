@@ -1,0 +1,71 @@
+
+EC2-Workflow-StepFunction-Role 
+
+1. AWSLambdaRole
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
+
+
+
+2. EC2-StartStop-Policy
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:StartInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": [
+                "arn:aws:license-manager:*:021655151277:license-configuration:*",
+                "arn:aws:ec2:*:021655151277:instance/*"
+            ]
+        }
+    ]
+}
+
+
+3. SNS-Logs-Policy
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublishToSNS",
+            "Effect": "Allow",
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:us-east-1:021655151277:MyTopic"
+        },
+        {
+            "Sid": "CloudWatchLogs",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogDelivery",
+                "logs:GetLogDelivery",
+                "logs:UpdateLogDelivery",
+                "logs:DeleteLogDelivery",
+                "logs:ListLogDeliveries",
+                "logs:PutResourcePolicy",
+                "logs:DescribeResourcePolicies",
+                "logs:DescribeLogGroups"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
