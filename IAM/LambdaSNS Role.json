@@ -27,7 +27,7 @@ LambdaSNS Role
             "Sid": "PublishSNS",
             "Effect": "Allow",
             "Action": "sns:Publish",
-            "Resource": "arn:aws:sns:us-east-1:021655151277:MyTopic"
+            "Resource": "arn:aws:sns:us-east-1:xxxxxxxxx:MyTopic"
         }
     ]
 }
